@@ -23,6 +23,14 @@ public class SnakeCamelUtilTest {
 	}
 	
 	@Test
+	public void snakeToCamelcaseで_abc_def_をキャメルケースに変換できる() {
+		SnakeCamelUtil scu = new SnakeCamelUtil();
+		String expected = "AbcDef";
+		String actual = scu.snakeToCamelcase("_abc_def_");
+		assertThat(actual, is(expected));
+	}
+	
+	@Test
 	public void camelToSnakecaseでGacktSatoruをスネークケースに変換できる() {
 		SnakeCamelUtil scu = new SnakeCamelUtil();
 		String expected = "gackt_satoru";
